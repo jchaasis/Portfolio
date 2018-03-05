@@ -47,7 +47,7 @@ h1 {
 /********************************************************/
 #tackleBox{
   width: 90%;
-  height: 100vh;
+  height: 105vh;
   margin-left: 5%;
   background-color: rgb(148, 145, 148);
   overflow: scroll;
@@ -183,11 +183,58 @@ animation-iteration-count: 1;
 /********************************************************/
 
 #projects {
+
   width: 90%;
   height: 100vh;
   margin-left: 5%;
   background-image: url("http://24066-presscdn.pagely.netdna-cdn.com/wp-content/uploads/2017/08/11521-Charleston-Harbor-and-Approaches.jpg");
   background-position:center;
+}
 
+.project {
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  animation: pulse 3s infinite;
+}
 
+/*********************************************************/
+            /* help with the pulse came from https://codepen.io/olam/pen/zcqea */
+/********************************************************/
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
+  }
+  70% {
+      box-shadow: 0 0 0 20px rgba(255,0,0, 0);
+  }
+  100% {
+      box-shadow: 0 0 0 0 rgba(255,0,0, 0);
+  }
+}
+
+#proj1 {
+  position:relative;
+  top: 60%;
+  left: 40%;
+}
+
+#proj2 {
+  position:relative;
+  top:10%;
+  left: 20%;
+}
+
+#proj3 {
+  position:relative;
+  top: 10%;
+  left: 80%;
+}
+
+#proj4 {
+  position:relative;
+  top: 30%;
+  left: 60%;
 }
