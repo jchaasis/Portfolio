@@ -1,11 +1,135 @@
+
 #header {
+  width: 100%;
   height: 500px;
   background-image: url("https://phallphotos.files.wordpress.com/2013/08/1221.jpg");
   background-size: cover;
   background-position:top;
 }
 
+body {
+  font-family: 'Muli', sans-serif;
+}
+/*********************************************************/
+  /* About */
+/********************************************************/
+
+#about {
+  display: flex;
+  flex-wrap:wrap;
+  flex-direction: row;
+  width: 90%;
+  margin-left: 5%;
+}
+
+#aboutPara {
+  font-size: 1.5;
+}
+
 #soloPic {
+  position:relative;
+  bottom: 50px;
+  float:left;
+  margin: 5px;
+  width: 250px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 4px 5px rgba(0, 0, 0, 0.44);
+  }
+
+/*********************************************************/
+  /* Toolbox */
+/********************************************************/
+#tackleBox{
+  width: 90%;
+  margin-left: 5%;
+}
+
+#luresShelf {
+  height: 500px;
+}
+
+#luresList{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.lureContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(45, 74, 43);
+  border: medium solid black;
   width: 200px;
-  float: left;
+  height: 300px;
+}
+
+.lure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 250px;
+  border: 2px solid black;
+  border-radius: 50% 50% 50% 50%;
+}
+
+.lureLogo {
+  width: 80%;
+}
+
+#javascript {
+  background-color: rgb(235,203,90);
+  border-color: rgb(220,200,114);
+}
+
+#html {
+  background-color: rgb(239,117,47);
+  border-color: rgb(215,90,38);
+}
+
+#css {
+  background-color: rgb(80,155,209);
+  border-color: rgb(46,99,170);
+}
+
+#react {
+  background-color: rgb(42,44,46);
+  border-color: rgb(181,227,243);
+}
+
+#redux {
+  background-color: rgb(34,34,34);
+  border-color: rgb(110,79,181);
+}
+
+#node {
+  background-color: rgb(63,63,53);
+  border-color: rgb(102,155,79);
+}
+
+#git {
+  background-color: rgb(96, 38, 26);
+  border-color: rgb(224,92,64);
+}
+
+#npm {
+  background-color: white;
+  border-color: rgb(189,68,62);
+}
+
+#postgresql {
+  background-color: rgb(148, 173, 195);
+  border-color: rgb(61,103,141);
+}
+
+
+/*********************************************************/
+  /* Projects */
+/********************************************************/
+
+#projects {
+  height: 1000px;
+  background-image: url("http://24066-presscdn.pagely.netdna-cdn.com/wp-content/uploads/2017/08/11521-Charleston-Harbor-and-Approaches.jpg");
+  background-position:center;
 }
