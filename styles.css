@@ -10,6 +10,11 @@
 body {
   font-family: 'Muli', sans-serif;
 }
+
+h1 {
+  text-decoration: underline;
+  margin: 10px;
+}
 /*********************************************************/
   /* About */
 /********************************************************/
@@ -20,14 +25,15 @@ body {
   flex-direction: row;
   width: 90%;
   margin-left: 5%;
+  font-size: 1.5em;
 }
 
 #aboutPara {
-  font-size: 1.5;
+  font-size: 1.2em;
 }
 
 #soloPic {
-  position:relative;
+  /* position: static; */
   bottom: 50px;
   float:left;
   margin: 5px;
@@ -41,7 +47,10 @@ body {
 /********************************************************/
 #tackleBox{
   width: 90%;
+  height: 100vh;
   margin-left: 5%;
+  background-color: rgb(148, 145, 148);
+  overflow: scroll;
 }
 
 #luresShelf {
@@ -56,12 +65,15 @@ body {
 
 .lureContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(45, 74, 43);
+  /* background-color: rgb(45, 74, 43); */
+  /* background: repeating-linear-gradient(rgb(17, 33, 15), rgb(45, 74, 43)); */
+   background: repeating-linear-gradient(90deg,rgb(17, 33, 15) , rgb(45, 74, 43) 2%);
   border: medium solid black;
-  width: 200px;
-  height: 300px;
+  width: 175px;
+  height: 350px;
 }
 
 .lure {
@@ -72,7 +84,49 @@ body {
   height: 250px;
   border: 2px solid black;
   border-radius: 50% 50% 50% 50%;
+  box-shadow: 3px 3px 4px 3px rgba(0, 0, 0, 0.44);
 }
+
+.hook{
+  margin: none;
+  position: relative;
+  bottom: 10px;
+  right: 24px;
+  background-color: none;
+  width: 50px;
+  height: 75px;
+  border-right: 5px solid silver;
+  border-bottom: 5px solid silver;
+  border-radius: 0 0 40px 40px;
+}
+
+/* .growLure{
+animation-duration: 3s;
+animation-name: growLure;
+animation-iteration-count: 1;
+}
+
+@keyframes growLure {
+  from {
+    width: 100px;
+    height: 250px;
+    box-shadow: 3px 3px 4px 3px rgba(0, 0, 0, 0.44);
+  }
+
+  to {
+    width: 200px;
+    height: 300px;
+    box-shadow: 3px 3px 6px 6px rgba(0, 0, 0, 0.44);
+  }
+} */
+
+/* .lure :hover{
+  animation: growLure;
+}
+
+.lure:hover{
+    transition: box-shadow 3px 3px 6px 7px rgba(0, 0, 0, 0.44);
+} */
 
 .lureLogo {
   width: 80%;
@@ -129,7 +183,11 @@ body {
 /********************************************************/
 
 #projects {
-  height: 1000px;
+  width: 90%;
+  height: 100vh;
+  margin-left: 5%;
   background-image: url("http://24066-presscdn.pagely.netdna-cdn.com/wp-content/uploads/2017/08/11521-Charleston-Harbor-and-Approaches.jpg");
   background-position:center;
+
+
 }
