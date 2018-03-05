@@ -1,0 +1,11 @@
+#header {
+  height: 500px;
+  background-image: url("https://phallphotos.files.wordpress.com/2013/08/1221.jpg");
+  background-size: cover;
+  background-position:top;
+}
+
+#soloPic {
+  width: 200px;
+  float: left;
+}
