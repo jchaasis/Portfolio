@@ -24,7 +24,7 @@ h1 {
   background-position:top;
 }
 
-#navContainer {
+.navContainer {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -33,7 +33,7 @@ h1 {
   width: 100%;
 }
 
-#navBar {
+.iconBar {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -286,4 +286,13 @@ animation-iteration-count: 1;
   position:relative;
   top: 30%;
   left: 60%;
+}
+
+/*********************************************************/
+          /* contact */
+/********************************************************/
+
+#contactsContainer {
+  display: flex;
+  justify-content: center;
 }
