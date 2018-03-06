@@ -1,11 +1,4 @@
 
-#header {
-  width: 100%;
-  height: 500px;
-  background-image: url("https://phallphotos.files.wordpress.com/2013/08/1221.jpg");
-  background-size: cover;
-  background-position:top;
-}
 
 body {
   font-family: 'Muli', sans-serif;
@@ -15,6 +8,62 @@ h1 {
   text-decoration: underline;
   margin: 10px;
 }
+
+/*********************************************************/
+  /* header */
+/********************************************************/
+
+#header {
+  display:flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  height: 700px;
+  background-image: url("https://phallphotos.files.wordpress.com/2013/08/1221.jpg");
+  background-size: cover;
+  background-position:top;
+}
+
+#navContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 300px;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
+  width: 100%;
+}
+
+#navBar {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.navPic {
+  position: relative;
+  bottom: 0px;
+  width: 50px;
+  margin: 5px;
+  transition-property: bottom;
+  transition-duration: 500ms;
+}
+
+.navPic:hover {
+  bottom: 15px;
+}
+
+@keyframes bounce {
+  0% {
+    bottom: 0px;
+  }
+  70% {
+      bottom:10px ;
+  }
+  100% {
+      bottom: 0px;
+  }
+}
+
 /*********************************************************/
   /* About */
 /********************************************************/
