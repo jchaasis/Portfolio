@@ -2,6 +2,7 @@
 
 body {
   font-family: 'Muli', sans-serif;
+margin: 0px;
 }
 
 h1 {
@@ -73,8 +74,9 @@ h1 {
   flex-wrap:wrap;
   flex-direction: row;
   width: 90%;
+  height: 50vh;
   margin-left: 5%;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 #aboutPara {
@@ -230,6 +232,11 @@ animation-iteration-count: 1;
 /*********************************************************/
   /* Projects */
 /********************************************************/
+#coordsContainer {
+  position: fixed;
+  z-index: 5;
+}
+
 
 #projects {
 
@@ -291,7 +298,10 @@ animation-iteration-count: 1;
 /*********************************************************/
           /* contact */
 /********************************************************/
-
+#contact {
+  width: 90%;
+  margin-left: 5%;
+}
 #contactsContainer {
   display: flex;
   justify-content: center;
