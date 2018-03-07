@@ -239,7 +239,7 @@ animation-iteration-count: 1;
 
 
 #projects {
-
+  padding: 0%;
   width: 90%;
   height: 100vh;
   margin-left: 5%;
@@ -248,6 +248,10 @@ animation-iteration-count: 1;
 }
 
 .project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 10px;
   width: 50px;
   height: 50px;
@@ -272,25 +276,29 @@ animation-iteration-count: 1;
 }
 
 #proj1 {
-  position:relative;
+  position: relative;
+  width: 50px;
+  height: 50px;
   top: 60%;
   left: 40%;
 }
 
 #proj2 {
-  position:relative;
+  position: relative;
+  width: 50px;
+  height: 50px;
   top:10%;
   left: 20%;
 }
 
 #proj3 {
-  position:relative;
+  position: relative;
   top: 10%;
   left: 80%;
 }
 
 #proj4 {
-  position:relative;
+  position: relative;
   top: 30%;
   left: 60%;
 }
