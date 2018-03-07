@@ -40,10 +40,8 @@ projectsContainer.addEventListener("mouseleave", clearCoords);
 
 //first off, create a function that will retrieve the data and in the data file and create the appropriate div
 
+//use to keep track of open projects so that only one can be open at a time.
 let visible = false;
-
-// let test = document.getElementById('proj1')
-// console.log(test.style)
 
 function showProject(){
 
@@ -53,11 +51,14 @@ function showProject(){
   // //find the dom getElement
   let activeProj = document.getElementById(id);
 
-  // //store the active styles so we can reset them when the user leaves the divs
-  let style = activeProj.style;
+  //store the active styles so we can reset them when the user leaves the divs
+  let style = window.getComputedStyle(activeProj, null)
 
+  console.log(style)
   let top = style.top;
   let left = style.left;
+
+  console.log(top)
 
   if (visible === false){
     //set visible to true so that the actions do not continue to repeat.
@@ -87,16 +88,10 @@ function showProject(){
     p.innerHTML = projects[index].description;
     //create 2 anchor elements
 
-    // //add an exit button that will close the project view
-    // let exit = document.createElement('input');
-    // exit.type = 'button';
-    // exit.value = 'X';
-    //
-    // exit.addEventListener("click", hideProject)
-
+    //add listener to handle the cursor exiting the div
     activeProj.addEventListener("mouseleave", hideProject)
 
-    // append the new elements to the div once it is has reached the appropriate size
+    //append the new elements to the div once it is has reached the appropriate size
     setTimeout(function(){
       //this prevents the dom elements from loading if the cursor briskly slides across a marker
       if (visible === true){
@@ -104,36 +99,24 @@ function showProject(){
         activeProj.appendChild(p);
       }
     }, 500)
-    // activeProj.appendChild(exit)
-    // activeProj.appendChild(img);
-    // activeProj.appendChild(p);
-
 
     //hide the project when you exit
     function hideProject() {
-      //
-      // if (visible === true){
 
         console.log(`leaving ${id} now`)
         //remove the added dom elements
-        // activeProj.removeChild(img);
-        // activeProj.removeChild(p);
         img.remove();
         p.remove();
 
-        // //change the styles
+        //change the styles
         activeProj.style.width = 50 + 'px';
         activeProj.style.height = 50 + 'px';
+        activeProj.style.top = top;
+        activeProj.style.left = left;
+        activeProj.style.borderRadius = 50 + '%';
 
-        //reset visible
-      // }
       visible = false;
     }
-    //add a listener for when the cursor exits the divs
-    //it needs to be added once the div has reached its full width
-
-    activeProj.addEventListener("mouseleave", hideProject)
-
   }
 }
 // //hide the project when you exit
@@ -156,8 +139,6 @@ function showProject(){
   //proj1
 let proj1 = document.getElementById("proj1")
 proj1.addEventListener("mouseenter", showProject)
-
-// proj1.addEventListener("mouseleave", hideProject)
 
   //proj2
 let proj2 = document.getElementById("proj2");
