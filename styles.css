@@ -25,10 +25,10 @@ h1 {
 }
 
 #greetDisplay {
-  /* position: right; */
+  align-self: center;
+  position: relative;
+  /* bottom: 30%; */
   z-index: 10;
-  margin-right: 40%;
-  /* margin-top: 20%; */
   color: white;
   opacity: 0;
   animation: fade-in-out 3s infinite;
@@ -97,35 +97,71 @@ h1 {
 
 #about {
   display: flex;
-  flex-wrap:wrap;
-  flex-direction: row;
+  /* flex-wrap:wrap; */
+  flex-direction: column;
   width: 90%;
-  height: 50vh;
+  height: 80vh;
   margin-left: 5%;
   font-size: 1.2em;
 }
 
 #aboutPara {
+  /* width: 60%; */
+  /* margin: 0px; */
   font-size: 1.2em;
 }
 
-#soloPic {
-  /* position: static; */
-  bottom: 50px;
+/* #soloPic {
   float:left;
   margin: 5px;
   width: 250px;
   border-radius: 20px;
   box-shadow: 3px 3px 4px 5px rgba(0, 0, 0, 0.44);
-  }
+} */
+
+
+/* #summary {
+  width: 60%;
+} */
+
+#sideLists {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+#resume {
+  /* float: right; */
+  width: 40%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+#hobbies {
+
+    /* float: right; */
+    width: 40%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 20px;
+
+}
 
 /*********************************************************/
   /* Toolbox */
 /********************************************************/
 #tackleBox{
-  width: 90%;
-  height: 105vh;
-  margin-left: 5%;
+  margin-bottom: none;
+  width: 100%;
+  height: 100vh;
+  /* margin-left: 5%; */
   background-color: rgb(148, 145, 148);
   overflow: scroll;
 }
@@ -176,34 +212,6 @@ h1 {
   border-bottom: 5px solid silver;
   border-radius: 0 0 40px 40px;
 }
-
-/* .growLure{
-animation-duration: 3s;
-animation-name: growLure;
-animation-iteration-count: 1;
-}
-
-@keyframes growLure {
-  from {
-    width: 100px;
-    height: 250px;
-    box-shadow: 3px 3px 4px 3px rgba(0, 0, 0, 0.44);
-  }
-
-  to {
-    width: 200px;
-    height: 300px;
-    box-shadow: 3px 3px 6px 6px rgba(0, 0, 0, 0.44);
-  }
-} */
-
-/* .lure :hover{
-  animation: growLure;
-}
-
-.lure:hover{
-    transition: box-shadow 3px 3px 6px 7px rgba(0, 0, 0, 0.44);
-} */
 
 .lureLogo {
   width: 80%;
@@ -267,10 +275,9 @@ animation-iteration-count: 1;
 #projects {
   /* display: */
   padding: 0%;
-  width: 90%;
+  width: 100%;
   height: 100vh;
-  margin-left: 5%;
-  background-image: url("http://24066-presscdn.pagely.netdna-cdn.com/wp-content/uploads/2017/08/11521-Charleston-Harbor-and-Approaches.jpg");
+  background-image: url("/Users/christianhaasis/Documents/Projects/HacksisPortfolio/Images/Charleston-Harbor-and-Approaches.jpg");
   background-position:center;
 }
 
