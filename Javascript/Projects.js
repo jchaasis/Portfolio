@@ -32,33 +32,29 @@ function clearCoords() {
 }
 //add event for when the mouse leaves the map
 projectsContainer.addEventListener("mouseleave", clearCoords);
-// ******************* End coordinates portion********
 
-//Goal: When a user hovers over a marker on the map, it expands and shows the details of a project.
 
-// ***the projects array has been created and stored in the data.js file
+// ********************** End coordinates portion********************
 
-//first off, create a function that will retrieve the data and in the data file and create the appropriate div
+
+//Goal: When a user hovers over a marker on the map, it expands and shows the details of a project. When the user leaves the project preview, the marker shrinks back to its original state.
+
+// *****the projects array has been created and stored in the data.js file*****
 
 //use to keep track of open projects so that only one can be open at a time.
 let visible = false;
 
 function showProject(){
-
   //shortened for use below
   let id = event.target.id;
 
-  // //find the dom getElement
+  //find the dom element
   let activeProj = document.getElementById(id);
 
   //store the active styles so we can reset them when the user leaves the divs
   let style = window.getComputedStyle(activeProj, null)
-
-  console.log(style)
   let top = style.top;
   let left = style.left;
-
-  console.log(top)
 
   if (visible === false){
     //set visible to true so that the actions do not continue to repeat.
@@ -68,15 +64,17 @@ function showProject(){
     let index = id === "proj1" ? "0" : id === "proj2" ? "1" : id === "proj3" ? "2" : id === "proj4" ? "3" : null;
 
     //change the styles
-    activeProj.style.transitionProperty = 'all';
-    activeProj.style.transitionDuration = 500 + 'ms';
-    activeProj.style.width = 90 + '%';
-    activeProj.style.height = 90 + '%';
-    activeProj.style.borderRadius = 5 + 'px'
-    activeProj.style.left = 5 + '%';
-    activeProj.style.top = 0 + 'px';
-    activeProj.style.zIndex = 5;
-    activeProj.style.animation = 'none';
+    let styles = activeProj.style
+    styles.transitionProperty = 'all';
+    styles.transitionDuration = 500 + 'ms';
+    styles.width = 90 + '%';
+    styles.height = 90 + '%';
+    styles.borderRadius = 100 + 'px'
+    styles.left = 5 + '%';
+    styles.top = 0 + 'px';
+    //z index needs to change so that the div doesn't stutter and get stuck in a state of constantly changing.
+    styles.zIndex = 5;
+    styles.animation = 'none';
 
     //create an image element
     let img = document.createElement('img');
@@ -86,71 +84,66 @@ function showProject(){
     //create a p element
     let p = document.createElement('p');
     p.innerHTML = projects[index].description;
+
     //create 2 anchor elements
+    let liveLink = document.createElement('a');
+    liveLink.href = projects[index].live;
+    liveLink.target = "_blank";
+    liveLink.innerHTML = "VIEW PROJECT";
+
+    let codeLink = document.createElement('a');
+    codeLink.href = projects[index].github
+    codeLink.target = "_blank";
+
+    codeLink.innerHTML = "VIEW CODE";
 
     //add listener to handle the cursor exiting the div
     activeProj.addEventListener("mouseleave", hideProject)
 
-    //append the new elements to the div once it is has reached the appropriate size
+    //append the new elements to the div once it is has reached the appropriate size. this will
     setTimeout(function(){
       //this prevents the dom elements from loading if the cursor briskly slides across a marker
       if (visible === true){
         activeProj.appendChild(img);
         activeProj.appendChild(p);
+        activeProj.appendChild(liveLink);
+        activeProj.appendChild(codeLink);
       }
     }, 500)
 
     //hide the project when you exit
     function hideProject() {
 
-        console.log(`leaving ${id} now`)
-        //remove the added dom elements
-        img.remove();
-        p.remove();
+      //remove the added dom elements
+      img.remove();
+      p.remove();
+      liveLink.remove();
+      codeLink.remove();
 
-        //change the styles
-        activeProj.style.width = 50 + 'px';
-        activeProj.style.height = 50 + 'px';
-        activeProj.style.top = top;
-        activeProj.style.left = left;
-        activeProj.style.borderRadius = 50 + '%';
+      //change the styles back to the originals
+      styles.width = 50 + 'px';
+      styles.height = 50 + 'px';
+      styles.top = top;
+      styles.left = left;
+      styles.borderRadius = 50 + '%';
+      styles.animation = 'pulse 3s infinite';
 
+      //allow the user to view another project
       visible = false;
     }
   }
 }
-// //hide the project when you exit
-// function hideProject() {
-//
-//   if (visible === true){
-//     console.log('leaving now')
-//
-//     let id = event.target.id;
-//
-//     //find the dom getElement
-//     let activeProj = document.getElementById(id);
-//
-//     // //change the styles
-//     // activeProj.style.width = 50 + 'px';
-//   }
-// }
 
-//add event listeners to the divs
+//add event listeners to the project markers
   //proj1
 let proj1 = document.getElementById("proj1")
 proj1.addEventListener("mouseenter", showProject)
-
   //proj2
 let proj2 = document.getElementById("proj2");
 proj2.addEventListener("mouseenter", showProject)
-
-// proj2.addEventListener("mouseleave", hideProject)
   //proj3
 let proj3 = document.getElementById("proj3")
 proj3.addEventListener("mouseenter", showProject)
-
-// proj3.addEventListener("mouseleave", hideProject)
   //proj4
 let proj4 = document.getElementById("proj4")
 proj4.addEventListener("mouseenter", showProject)
-// proj4.addEventListener("mouseleave", hideProject)
