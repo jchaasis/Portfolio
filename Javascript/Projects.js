@@ -67,6 +67,7 @@ function showProject(){
     let styles = activeProj.style
     styles.transitionProperty = 'all';
     styles.transitionDuration = 500 + 'ms';
+    styles.backgroundColor = 'white';
     styles.width = 90 + '%';
     styles.height = 90 + '%';
     styles.borderRadius = 100 + 'px'
@@ -94,7 +95,6 @@ function showProject(){
     let codeLink = document.createElement('a');
     codeLink.href = projects[index].github
     codeLink.target = "_blank";
-
     codeLink.innerHTML = "VIEW CODE";
 
     //add listener to handle the cursor exiting the div
@@ -125,6 +125,7 @@ function showProject(){
       styles.height = 50 + 'px';
       styles.top = top;
       styles.left = left;
+      styles.backgroundColor = 'red';
       styles.borderRadius = 50 + '%';
       styles.animation = 'pulse 3s infinite';
 
