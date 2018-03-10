@@ -53,8 +53,13 @@ function displayText(){
   //add style to the text
   let tStyles = textBox.style
 
-  tStyles.position = 'relative';
-  tStyles.zindex =
+  tStyles.color = 'black';
+  // tStyles.backgroundColor = 'rgba(78, 78, 78, 0.71)';
+  // tStyles.background = 'content-box radial-gradient(rgba(78, 78, 78, 0.71), rgba(255, 255, 255, 0))'
+  tStyles.position = 'absolute';
+  tStyles.bottom = 75 + 'px';
+  tStyles.textDecoration = 'none';
+  // tStyles.zindex = 20;
 
   //add id so that we can remove the label later
   textBox.setAttribute('id', `${id}Label`)

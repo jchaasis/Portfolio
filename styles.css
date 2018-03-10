@@ -66,6 +66,11 @@ h1 {
   list-style: none;
 }
 
+.iconBar a {
+  text-align: center;
+
+}
+
 .navPic {
   position: relative;
   bottom: 0px;
