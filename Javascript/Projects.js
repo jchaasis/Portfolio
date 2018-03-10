@@ -33,7 +33,6 @@ function clearCoords() {
 //add event for when the mouse leaves the map
 projectsContainer.addEventListener("mouseleave", clearCoords);
 
-
 // ********************** End coordinates portion********************
 
 

@@ -27,3 +27,49 @@ function greet() {
 
 //call the greet function periodically to change the greeting that is displayed
 setInterval(()=>{greet()}, 3000);
+// ************************************* End Greeting *************************************
+
+// Goal: when hover over the navigation icons, the name of the sections displays in a div above the icon.
+//find the icons
+let icons = document.getElementsByClassName('navPic');
+//add event listener for when the mouse hovers over the icon
+for (let i = 0; i<icons.length; i++){
+  icons[i].addEventListener('mouseover', displayText)
+  icons[i].addEventListener('mouseleave', removeText)
+}
+
+// icons.forEach(icon => icon.addEventListener('mouseover', displayText))
+function displayText(){
+
+  let id = event.target.id
+  //find the current item
+  let current = document.getElementById(id);
+  //find its parent
+  let parent = current.parentNode
+  //create the textbox
+  let textBox = document.createElement('p');
+  textBox.innerHTML = id;
+
+  //add style to the text
+  let tStyles = textBox.style
+
+  tStyles.position = 'relative';
+  tStyles.zindex =
+
+  //add id so that we can remove the label later
+  textBox.setAttribute('id', `${id}Label`)
+
+  //attach the new text node
+  parent.insertBefore(textBox, current)
+}
+
+//remove the text box when we leave the icons
+function removeText(){
+  let id = event.target.id
+
+  //find the current item
+  // let current = document.getElementById(id);
+  let label = document.getElementById(`${id}Label`);
+
+  label.remove()
+}
