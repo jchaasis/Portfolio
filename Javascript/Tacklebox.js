@@ -10,12 +10,10 @@ for (let i = 0; i<lures.length; i++){
   lures[i].addEventListener('mouseleave', removeText)
 }
 
-// lures.forEach(icon => icon.addEventListener('mouseover', displayText))
 function displayText(){
 
   let id = event.target.id
 
-  console.log(id)
   //find the current item
   let current = document.getElementById(id);
   //find its parent
