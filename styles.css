@@ -4,6 +4,7 @@ margin: 0px;
 }
 
 h1 {
+  margin-top: 0px;
   text-decoration: underline;
   width: inherit;
   /* margin: 10px; */
@@ -63,6 +64,7 @@ h1 {
 }
 
 .iconBar {
+
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -160,7 +162,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   border-radius: 20px;
 }
 
@@ -188,7 +190,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   border-radius: 20px;
 }
 
@@ -233,9 +235,13 @@ h1 {
 #contactsContainer {
   background-color: white;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   border-radius: 20px;
   margin-bottom: 20px;
+}
+
+#contactsContainer ul {
+  padding: 10px;
 }
 
 /*********************************************************/
@@ -245,15 +251,16 @@ h1 {
   /* display: flex; */
   /* margin-bottom: none; */
   width: 100%;
-  height: 100vh;
-  /* margin-left: 5%; */
-  background-color: rgb(148, 145, 148);
-  overflow: scroll;
+  /* height: 100vh; */
+
+  /* background-color: rgb(148, 145, 148); */
+  background-color: rgb(231, 209, 180);
+  /* overflow: scroll; */
 }
 
 #luresShelf {
   display: flex;
-  height: 500px;
+  /* height: 500px; */
 }
 
 #luresList{
@@ -348,6 +355,10 @@ h1 {
   border-color: rgb(61,103,141);
 }
 
+#mongoDB {
+  background-color: rgb(139,115,82);
+  border-color: rgb(119,171,96);
+}
 
 /*********************************************************/
   /* Projects */
@@ -425,13 +436,14 @@ h1 {
 }
 
 /*********************************************************/
-          /* contact */
+          /* footer*/
 /********************************************************/
-#contact {
-  /* width: 90%;
-  margin-left: 5%; */
+
+footer {
+  padding: 20px;
+  background-color: rgb(156, 195, 156);
 }
-#contactsContainer {
-  display: flex;
-  justify-content: center;
+
+footer p {
+  margin: 4px;
 }
