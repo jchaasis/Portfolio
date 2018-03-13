@@ -5,7 +5,9 @@ margin: 0px;
 
 h1 {
   text-decoration: underline;
-  margin: 10px;
+  width: inherit;
+  /* margin: 10px; */
+  padding: 5px;
 }
 
 /*********************************************************/
@@ -126,8 +128,17 @@ h1 {
   /* flex-direction: row; */
 }
 
+#sideLists ul {
+  /* color: rgb(61,103,141); */
+}
+
+#sideLists p {
+  color: black;
+}
+
 #sideLists h2 {
   margin-bottom: 0px;
+  /* text-decoration: underline double rgb(61,103,141); */
 }
 
 .aboutList {
@@ -136,12 +147,28 @@ h1 {
 
 #resume {
   width: 40%;
-  /* height: auto; */
   display: flex;
   flex-direction: column;
   align-items: center;
   border: 2px solid black;
   border-radius: 20px;
+}
+
+#resumeDownload {
+  color: rgb(61,103,141);
+  /* background-color: rgb(156, 195, 156); */
+  border: 3px solid rgb(61,103,141);
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+#resumeDownload:hover {
+  color: rgb(156, 195, 156);
+  border: 3px solid rgb(156, 195, 156);
+  background-color: rgb(61,103,141);
+  transition-property: color background-color border;
+  transition-duration: 500ms;
 }
 
 #hobbies {
@@ -160,15 +187,32 @@ h1 {
 }
 
 #favoritesList {
-
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  }
+}
 
 #favoritesList li {
   margin:20px;
+}
+
+#favoritesList b {
+  color: rgb(61,103,141);
+  /* text-decoration: underline double rgb(61,103,141); */
+}
+
+#recipe {
+  text-decoration: none;
+  color: black;
+}
+
+#recipe:active {
+  color: red;
+}
+
+#recipe:visited {
+  color: black;
 }
 
 /*********************************************************/
@@ -361,8 +405,8 @@ h1 {
           /* contact */
 /********************************************************/
 #contact {
-  width: 90%;
-  margin-left: 5%;
+  /* width: 90%;
+  margin-left: 5%; */
 }
 #contactsContainer {
   display: flex;

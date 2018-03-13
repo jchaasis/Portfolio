@@ -16,10 +16,10 @@
       "description": "For this project, I did this one thing and then after that I did this other thing. At the end, I combined them all into one large group. It was Insane!",
       "completionDate": '9/10/2017',
       "github": "https://github.com/jchaasis/Week-nine-project-playlist", "live": "google.com"
-    }, {"image": "http://www.placecage.com/gif/200/299",
+    }, {"image": "/Users/christianhaasis/Documents/Projects/HacksisPortfolio/Images/screenshots/bentCreek.png",
       "title": "Playing with Playlists",
-      "description": "For this project, I did this one thing and then after that I did this other thing. At the end, I combined them all into one large group. It was Insane!",
+      "description": "The goal of this project was to take a provided mockup, and then construct the requested site with to pixel perfect. ",
       "completionDate": '9/10/2017',
-      "github": "https://github.com/jchaasis/Week-nine-project-playlist", "live": "google.com"
+      "github": "https://github.com/jchaasis/week-one-project", "live": "google.com"
     },
   ]
