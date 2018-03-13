@@ -86,10 +86,19 @@ function showProject(){
     p.innerHTML = projects[index].description;
 
     //create 2 anchor elements
-    let liveLink = document.createElement('a');
-    liveLink.href = projects[index].live;
-    liveLink.target = "_blank";
-    liveLink.innerHTML = "VIEW PROJECT";
+    let liveLink;
+    if (projects[index].live != null){
+      liveLink = document.createElement('a');
+      liveLink.href = projects[index].live;
+      liveLink.target = "_blank";
+      liveLink.innerHTML = "VIEW PROJECT";
+    } else {
+      liveLink = null;
+    }
+    // let liveLink = document.createElement('a');
+    // liveLink.href = projects[index].live;
+    // liveLink.target = "_blank";
+    // liveLink.innerHTML = "VIEW PROJECT";
 
     let codeLink = document.createElement('a');
     codeLink.href = projects[index].github
@@ -105,7 +114,9 @@ function showProject(){
       if (visible === true){
         activeProj.appendChild(img);
         activeProj.appendChild(p);
-        activeProj.appendChild(liveLink);
+        if (liveLink){
+          activeProj.appendChild(liveLink);
+        }
         activeProj.appendChild(codeLink);
       }
     }, 500)
@@ -116,7 +127,10 @@ function showProject(){
       //remove the added dom elements
       img.remove();
       p.remove();
-      liveLink.remove();
+      if (liveLink){
+        liveLink.remove();
+      }
+      // liveLink.remove();
       codeLink.remove();
 
       //change the styles back to the originals
