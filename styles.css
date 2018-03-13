@@ -105,21 +105,30 @@ h1 {
   display: flex;
   /* flex-wrap:wrap; */
   flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
   width: 100%;
   /* height: 100vh; */
   /* margin-left: 5%; */
   font-size: 1.2em;
+  background-color: rgb(61,103,141);
 }
 
 #aboutPara {
+  display: flex;
+  /* width: 90%; */
+  background-color: white;
   /* width: 60%; */
-  padding: 50px;
+  padding: 20px;
+  /* padding-top: 20px;
+  padding-bottom: 20px; */
   font-size: 1.2em;
+  border-radius:20px;
 }
 
-/* #summary {
-  width: 60%;
-} */
+#summary {
+  width: 90%;
+}
 
 #sideLists {
   display: flex;
@@ -146,6 +155,7 @@ h1 {
 }
 
 #resume {
+  background-color: white;
   width: 40%;
   display: flex;
   flex-direction: column;
@@ -172,21 +182,26 @@ h1 {
 }
 
 #hobbies {
-    width: 40%;
-    /* height: auto; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 2px solid black;
-    border-radius: 20px;
+  background-color: white;
+  width: 40%;
+  /* height: auto; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 20px;
 }
 
 #favoritesContainer{
+  width: 90%;
+  border-radius: 20px;
   /* width: 100%; */
   /* display: flex; */
 }
 
 #favoritesList {
+  border-radius: 20px;
+  background-color: white;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -213,6 +228,14 @@ h1 {
 
 #recipe:visited {
   color: black;
+}
+
+#contactsContainer {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  margin-bottom: 20px;
 }
 
 /*********************************************************/
