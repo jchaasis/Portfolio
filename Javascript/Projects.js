@@ -43,12 +43,23 @@ projectsContainer.addEventListener("mouseleave", clearCoords);
 //use to keep track of open projects so that only one can be open at a time.
 let visible = false;
 
+let allProjects = document.getElementsByClassName('project');
+
 function showProject(){
   //shortened for use below
   let id = event.target.id;
 
   //find the dom element
   let activeProj = document.getElementById(id);
+
+  //I am having trouble getting the dots that arent being visited to stay put so I am going to hide them when a project is pulled up.
+    //loop through the array of projects selected by class name and if the id doesn't match the current one, set the display to 'none'
+  for (let i = 0; i<allProjects.length; i++){
+    if (allProjects[i].id != id){
+      allProjects[i].style.transitionProperty = 'none';
+      allProjects[i].style.opacity = 0;
+    }
+  }
 
   //store the active styles so we can reset them when the user leaves the divs
   let style = window.getComputedStyle(activeProj, null)
@@ -65,7 +76,7 @@ function showProject(){
     //change the styles
     let styles = activeProj.style;
 
-    // styles.position = 'static';
+    styles.position = 'relative';
 
     styles.transitionProperty = 'all';
     styles.transitionDuration = 500 + 'ms';
@@ -73,7 +84,7 @@ function showProject(){
     styles.width = 90 + '%';
     styles.height = 90 + '%';
     styles.borderRadius = 100 + 'px'
-    styles.left = 5 + '%';
+    styles.left = 0 + '%';
     styles.top = 0 + 'px';
     //z index needs to change so that the div doesn't stutter and get stuck in a state of constantly changing.
     styles.zIndex = 20;
@@ -132,6 +143,7 @@ function showProject(){
     //hide the project when you exit
     function hideProject() {
 
+
       //remove the added dom elements
       img.remove();
       p.remove();
@@ -150,6 +162,17 @@ function showProject(){
       styles.backgroundColor = 'red';
       styles.borderRadius = 50 + '%';
       styles.animation = 'pulse 3s infinite';
+
+      //bring back the projects that were hidden once the project that was viewed returns to original size.
+      setTimeout(function(){
+        for (let i = 0; i<allProjects.length; i++){
+
+            allProjects[i].style.opacity = 1;
+        }
+      }, 500)
+      // for (let i = 0; i<allProjects.length; i++){
+      //     allProjects[i].style.opacity = 1;
+      // }
 
       //allow the user to view another project
       visible = false;
