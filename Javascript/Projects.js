@@ -63,7 +63,10 @@ function showProject(){
     let index = id === "proj1" ? "0" : id === "proj2" ? "1" : id === "proj3" ? "2" : id === "proj4" ? "3" : null;
 
     //change the styles
-    let styles = activeProj.style
+    let styles = activeProj.style;
+
+    // styles.position = 'static';
+
     styles.transitionProperty = 'all';
     styles.transitionDuration = 500 + 'ms';
     styles.backgroundColor = 'white';
@@ -73,7 +76,7 @@ function showProject(){
     styles.left = 5 + '%';
     styles.top = 0 + 'px';
     //z index needs to change so that the div doesn't stutter and get stuck in a state of constantly changing.
-    styles.zIndex = 5;
+    styles.zIndex = 20;
     styles.animation = 'none';
 
     //create an image element
@@ -106,7 +109,10 @@ function showProject(){
     codeLink.innerHTML = "VIEW CODE";
 
     //add listener to handle the cursor exiting the div
-    activeProj.addEventListener("mouseleave", hideProject)
+    // setTimeout(function(){
+    //   activeProj.addEventListener("mouseleave", hideProject)
+    // })
+    // activeProj.addEventListener("mouseleave", hideProject)
 
     //append the new elements to the div once it is has reached the appropriate size. this will
     setTimeout(function(){
@@ -118,6 +124,8 @@ function showProject(){
           activeProj.appendChild(liveLink);
         }
         activeProj.appendChild(codeLink);
+        //add listener to handle the cursor exiting the div, add it here so to avoid glitches that can occur based off of
+        activeProj.addEventListener("mouseleave", hideProject)
       }
     }, 500)
 
@@ -134,6 +142,7 @@ function showProject(){
       codeLink.remove();
 
       //change the styles back to the originals
+      // styles.position = 'relative';
       styles.width = 50 + 'px';
       styles.height = 50 + 'px';
       styles.top = top;
