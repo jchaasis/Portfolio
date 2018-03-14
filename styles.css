@@ -370,8 +370,10 @@ h1 {
 
 
 #projects {
-  display:
+  position: relative;
+  /* display: flex;
   flex-wrap: wrap;
+  justify-content: space-around; */
   padding: 0%;
   width: 100%;
   height: 100vh;
@@ -393,6 +395,9 @@ h1 {
   animation: pulse 3s infinite;
 }
 
+.project a {
+  color: green;
+}
 /*********************************************************/
             /* help with the pulse came from https://codepen.io/olam/pen/zcqea */
 /********************************************************/
@@ -409,34 +414,34 @@ h1 {
 }
 
 #proj1 {
-  position: relative;
+  position: absolute;
   z-index: 1;
   /* width: 50px;
   height: 50px; */
-  top: 60%;
+  top: 65%;
   left: 40%;
 }
 
 #proj2 {
-  position: relative;
+  position: absolute;
   z-index: 1;
   /* width: 50px;
   height: 50px; */
-  top:10%;
+  top:15%;
   left: 20%;
 }
 
 #proj3 {
-  position: relative;
+  position: absolute;
   z-index: 1;
-  top: 10%;
+  top: 15%;
   left: 80%;
 }
 
 #proj4 {
-  position: relative;
+  position: absolute;
   z-index: 1;
-  top: 30%;
+  top: 35%;
   left: 60%;
 }
 

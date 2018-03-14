@@ -35,7 +35,6 @@ projectsContainer.addEventListener("mouseleave", clearCoords);
 
 // ********************** End coordinates portion********************
 
-
 //Goal: When a user hovers over a marker on the map, it expands and shows the details of a project. When the user leaves the project preview, the marker shrinks back to its original state.
 
 // *****the projects array has been created and stored in the data.js file*****
@@ -57,7 +56,9 @@ function showProject(){
   for (let i = 0; i<allProjects.length; i++){
     if (allProjects[i].id != id){
       allProjects[i].style.transitionProperty = 'none';
-      allProjects[i].style.opacity = 0;
+      // allProjects[i].style.opacity = 0;
+      allProjects[i].style.display = 'none';
+        // allProjects[i].style.visibility = 'hidden';
     }
   }
 
@@ -76,31 +77,44 @@ function showProject(){
     //change the styles
     let styles = activeProj.style;
 
-    styles.position = 'relative';
-
+    // styles.position = 'relative';
+    //add transition
     styles.transitionProperty = 'all';
     styles.transitionDuration = 500 + 'ms';
-    styles.backgroundColor = 'white';
+
+    styles.backgroundColor = 'rgb(156, 195, 156)';
     styles.width = 90 + '%';
     styles.height = 90 + '%';
+    //border
     styles.borderRadius = 100 + 'px'
-    styles.left = 0 + '%';
-    styles.top = 0 + 'px';
+    //position
+    styles.left = 5 + '%';
+    styles.top = 5 + '%';
     //z index needs to change so that the div doesn't stutter and get stuck in a state of constantly changing.
     styles.zIndex = 20;
+    //remove pulsing
     styles.animation = 'none';
 
     //create an image element
     let img = document.createElement('img');
     img.src = projects[index].image;
-    img.style.width = 70 + '%';
+
+    projects[index].title === 'Gabble' ? img.style.width = 300 + 'px' : img.style.width = 70 + '%';
+
+    img.style.borderRadius = 20 + 'px';
 
     //create a p element
     let p = document.createElement('p');
     p.innerHTML = projects[index].description;
+      //p styles
+    p.style.width = 60 + '%';
+    p.style.backgroundColor = 'white';
+    p.style.padding = 20 + 'px';
+    p.style.borderRadius = 20 + 'px';
 
     //create 2 anchor elements
     let liveLink;
+    //Don't create a link to the live website if it isnt deployed
     if (projects[index].live != null){
       liveLink = document.createElement('a');
       liveLink.href = projects[index].live;
@@ -109,10 +123,6 @@ function showProject(){
     } else {
       liveLink = null;
     }
-    // let liveLink = document.createElement('a');
-    // liveLink.href = projects[index].live;
-    // liveLink.target = "_blank";
-    // liveLink.innerHTML = "VIEW PROJECT";
 
     let codeLink = document.createElement('a');
     codeLink.href = projects[index].github
@@ -135,14 +145,13 @@ function showProject(){
           activeProj.appendChild(liveLink);
         }
         activeProj.appendChild(codeLink);
-        //add listener to handle the cursor exiting the div, add it here so to avoid glitches that can occur based off of
+        //add listener to handle the cursor exiting the div, add it here so to avoid glitches
         activeProj.addEventListener("mouseleave", hideProject)
       }
     }, 500)
 
     //hide the project when you exit
     function hideProject() {
-
 
       //remove the added dom elements
       img.remove();
@@ -155,21 +164,24 @@ function showProject(){
 
       //change the styles back to the originals
       // styles.position = 'relative';
+      // styles.zIndex = 1;
       styles.width = 50 + 'px';
       styles.height = 50 + 'px';
       styles.top = top;
       styles.left = left;
       styles.backgroundColor = 'red';
       styles.borderRadius = 50 + '%';
+
       styles.animation = 'pulse 3s infinite';
 
       //bring back the projects that were hidden once the project that was viewed returns to original size.
       setTimeout(function(){
         for (let i = 0; i<allProjects.length; i++){
-
-            allProjects[i].style.opacity = 1;
+          // allProjects[i].style.visibility = 'visible';
+            allProjects[i].style.display = 'flex';
+            // allProjects[i].style.opacity = 1;
         }
-      }, 500)
+      }, 250)
       // for (let i = 0; i<allProjects.length; i++){
       //     allProjects[i].style.opacity = 1;
       // }
