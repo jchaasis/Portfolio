@@ -81,4 +81,20 @@ setInterval(()=>{greet()}, 3000);
 //   let label = document.getElementById(`${id}Label`);
 //
 //   label.remove()
-// }
+
+
+// Goal: When a navigation button is clicked, smoothly scroll to the designated position
+
+//find the icons
+let icons = document.getElementsByClassName('navPic');
+//add event listener to each icon
+for (let i = 0; i<icons.length; i++){
+  icons[i].addEventListener('click', quickScroll)
+}
+
+function quickScroll(){
+  console.log('clicked')
+  let id = event.target.id.toLowerCase();
+
+  document.getElementById(id).scrollIntoView({behavior:"smooth"})
+}

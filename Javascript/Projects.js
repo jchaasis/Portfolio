@@ -15,7 +15,6 @@ function showCoords(event) {
     let x = event.clientX;
     let y = event.clientY;
     let coords = `(${x}, ${y})`
-
     //assign the position of the container
     coordsContainer.style.left = x + 'px';
     coordsContainer.style.top = y + 'px';
@@ -51,14 +50,11 @@ function showProject(){
   //find the dom element
   let activeProj = document.getElementById(id);
 
-  //I am having trouble getting the dots that arent being visited to stay put so I am going to hide them when a project is pulled up.
-    //loop through the array of projects selected by class name and if the id doesn't match the current one, set the display to 'none'
+  //loop through the array of projects selected by class name and if the id doesn't match the current one, set the display to 'none'
   for (let i = 0; i<allProjects.length; i++){
     if (allProjects[i].id != id){
       allProjects[i].style.transitionProperty = 'none';
-      // allProjects[i].style.opacity = 0;
       allProjects[i].style.display = 'none';
-        // allProjects[i].style.visibility = 'hidden';
     }
   }
 
@@ -83,13 +79,14 @@ function showProject(){
     styles.transitionDuration = 500 + 'ms';
 
     styles.backgroundColor = 'rgb(156, 195, 156)';
-    styles.width = 90 + '%';
-    styles.height = 90 + '%';
+    styles.width = 80 + '%';
+    styles.height = 80 + '%';
     //border
     styles.borderRadius = 100 + 'px'
+    styles.boxShadow = '3px 3px 4px 3px rgba(0, 0, 0, 0.44)'
     //position
-    styles.left = 5 + '%';
-    styles.top = 5 + '%';
+    styles.left = 10 + '%';
+    styles.top = 10 + '%';
     //z index needs to change so that the div doesn't stutter and get stuck in a state of constantly changing.
     styles.zIndex = 20;
     //remove pulsing
@@ -98,7 +95,7 @@ function showProject(){
     //create an image element
     let img = document.createElement('img');
     img.src = projects[index].image;
-
+    //gabble needs to be sized differently because it is a slim and tall screenshot.
     projects[index].title === 'Gabble' ? img.style.width = 300 + 'px' : img.style.width = 70 + '%';
 
     img.style.borderRadius = 20 + 'px';
@@ -129,12 +126,6 @@ function showProject(){
     codeLink.target = "_blank";
     codeLink.innerHTML = "VIEW CODE";
 
-    //add listener to handle the cursor exiting the div
-    // setTimeout(function(){
-    //   activeProj.addEventListener("mouseleave", hideProject)
-    // })
-    // activeProj.addEventListener("mouseleave", hideProject)
-
     //append the new elements to the div once it is has reached the appropriate size. this will
     setTimeout(function(){
       //this prevents the dom elements from loading if the cursor briskly slides across a marker
@@ -152,26 +143,21 @@ function showProject(){
 
     //hide the project when you exit
     function hideProject() {
-
       //remove the added dom elements
       img.remove();
       p.remove();
       if (liveLink){
         liveLink.remove();
       }
-      // liveLink.remove();
       codeLink.remove();
 
       //change the styles back to the originals
-      // styles.position = 'relative';
-      // styles.zIndex = 1;
       styles.width = 50 + 'px';
       styles.height = 50 + 'px';
       styles.top = top;
       styles.left = left;
       styles.backgroundColor = 'red';
       styles.borderRadius = 50 + '%';
-
       styles.animation = 'pulse 3s infinite';
 
       //bring back the projects that were hidden once the project that was viewed returns to original size.
@@ -182,10 +168,6 @@ function showProject(){
             // allProjects[i].style.opacity = 1;
         }
       }, 250)
-      // for (let i = 0; i<allProjects.length; i++){
-      //     allProjects[i].style.opacity = 1;
-      // }
-
       //allow the user to view another project
       visible = false;
     }

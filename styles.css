@@ -1,3 +1,5 @@
+/* blue:rgb(61,103,141) */
+
 body {
   font-family: 'Muli', sans-serif;
 margin: 0px;
@@ -5,6 +7,7 @@ margin: 0px;
 
 h1 {
   margin-top: 0px;
+  margin-right: 0px;
   text-decoration: underline;
   width: inherit;
   /* margin: 10px; */
@@ -21,16 +24,17 @@ h1 {
   justify-content: flex-end;
   align-items: flex-end;
   width: 100%;
-  height: 100vh;
+  height: 50vh;
   background-image: url("/Users/christianhaasis/Documents/Projects/HacksisPortfolio/Images/DuneGrass.jpg");
   background-size: cover;
   background-position:top;
 }
 
+
 #greetDisplay {
   align-self: center;
   position: relative;
-  /* bottom: 30%; */
+  top: 30%;
   z-index: 10;
   color: white;
   opacity: 0;
@@ -56,16 +60,23 @@ h1 {
 
 .navContainer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: flex-end;
-  height: 300px;
-  background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
+  height: 200px;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgb(61,103,141));
   width: 100%;
 }
 
-.iconBar {
+#headerLogo {
+  margin: 5px;
+  width: 100px;
+  border-radius: 50%;
+}
 
+.iconBar {
   display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
   flex-wrap: wrap;
   list-style: none;
 }
@@ -149,7 +160,6 @@ h1 {
 
 #sideLists h2 {
   margin-bottom: 0px;
-  /* text-decoration: underline double rgb(61,103,141); */
 }
 
 .aboutList {
@@ -244,13 +254,27 @@ h1 {
   padding: 10px;
 }
 
+.contactPic {
+  position: relative;
+  bottom: 0px;
+  width: 50px;
+  margin: 5px;
+  transition-property: bottom;
+  transition-duration: 500ms;
+}
+
+.contactPic:hover {
+  bottom: 15px;
+}
+
 /*********************************************************/
   /* Toolbox */
 /********************************************************/
 #tackleBox{
   /* display: flex; */
   /* margin-bottom: none; */
-  width: 100%;
+
+  /* width: 100%; */
   /* height: 100vh; */
 
   /* background-color: rgb(148, 145, 148); */
@@ -260,10 +284,13 @@ h1 {
 
 #luresShelf {
   display: flex;
+  margin-left: 5%;
   /* height: 500px; */
 }
 
 #luresList{
+  padding-left: none;
+
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -360,6 +387,11 @@ h1 {
   border-color: rgb(119,171,96);
 }
 
+#mapbox {
+  background-color: white;
+  border-color: rgb(65,105,242)
+}
+
 /*********************************************************/
   /* Projects */
 /********************************************************/
@@ -415,32 +447,26 @@ h1 {
 
 #proj1 {
   position: absolute;
-  z-index: 1;
-  /* width: 50px;
-  height: 50px; */
   top: 65%;
   left: 40%;
 }
 
 #proj2 {
   position: absolute;
-  z-index: 1;
-  /* width: 50px;
-  height: 50px; */
   top:15%;
   left: 20%;
 }
 
 #proj3 {
   position: absolute;
-  z-index: 1;
+
   top: 15%;
   left: 80%;
 }
 
 #proj4 {
   position: absolute;
-  z-index: 1;
+
   top: 35%;
   left: 60%;
 }
@@ -451,8 +477,13 @@ h1 {
 
 footer {
   padding: 20px;
-  background-color: rgb(156, 195, 156);
+  background-color: rgb(61,103,141);
   text-align: center;
+}
+
+#logo {
+  border-radius: 50%;
+  width: 100px;
 }
 
 footer p {
