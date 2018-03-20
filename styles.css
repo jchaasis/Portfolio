@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Muli', sans-serif;
-margin: 0px;
+  margin: 0px;
 }
 
 h1 {
@@ -23,7 +23,7 @@ h1 {
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
-  width: 100%;
+
   height: 50vh;
   background-image: url("Images/DuneGrass.jpg");
   background-size: cover;
@@ -120,7 +120,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
-  width: 100%;
+
   /* height: 100vh; */
   /* margin-left: 5%; */
   font-size: 1.2em;
@@ -428,7 +428,7 @@ h1 {
   flex-wrap: wrap;
   justify-content: space-around; */
   padding: 0%;
-  width: 100%;
+
   height: 100vh;
   background-image: url("Images/Charleston-Harbor-and-Approaches.jpg");
   background-position:center;
@@ -481,8 +481,8 @@ h1 {
 #proj3 {
   position: absolute;
 
-  top: 15%;
-  left: 80%;
+  top: 20%;
+  left: 77%;
 }
 
 #proj4 {

@@ -4,7 +4,7 @@
 let lures = document.getElementsByClassName('lure');
 //add event listener for when the mouse hovers over the icon
 
-console.log(lures)
+
 for (let i = 0; i<lures.length; i++){
   lures[i].addEventListener('mouseenter', displayText)
   lures[i].addEventListener('mouseleave', removeText)

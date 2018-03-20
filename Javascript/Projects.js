@@ -80,7 +80,7 @@ function showProject(){
 
     styles.backgroundColor = 'rgb(156, 195, 156)';
     styles.width = 80 + '%';
-    styles.height = 80 + '%';
+    styles.height = 85 + '%';
     //border
     styles.borderRadius = 100 + 'px'
     styles.boxShadow = '3px 3px 4px 3px rgba(0, 0, 0, 0.44)'
@@ -96,7 +96,7 @@ function showProject(){
     let img = document.createElement('img');
     img.src = projects[index].image;
     //gabble needs to be sized differently because it is a slim and tall screenshot.
-    projects[index].title === 'Gabble' ? img.style.width = 300 + 'px' : img.style.width = 70 + '%';
+    projects[index].title === 'Gabble' ? img.style.width = 250 + 'px' : img.style.width = 70 + '%';
 
     img.style.borderRadius = 20 + 'px';
 
@@ -109,7 +109,14 @@ function showProject(){
     p.style.padding = 20 + 'px';
     p.style.borderRadius = 20 + 'px';
 
-    //create 2 anchor elements
+    //create a section for the links and create 2 anchor elements
+    let linkContainer = document.createElement('div')
+    linkContainer.style.backgroundColor = 'white';
+    linkContainer.style.borderRadius = 20 + 'px';
+    linkContainer.style.display = 'flex';
+    linkContainer.style.padding = 10 + 'px';
+
+
     let liveLink;
     //Don't create a link to the live website if it isnt deployed
     if (projects[index].live != null){
@@ -126,16 +133,29 @@ function showProject(){
     codeLink.target = "_blank";
     codeLink.innerHTML = "VIEW CODE";
 
+    // append the links to the link link navContainer
+    linkContainer.appendChild(codeLink);
+    if (liveLink){
+      let seperator = document.createElement('p')
+      seperator.innerHTML = '||'
+      seperator.style.margin = 0 + 'px';
+      seperator.style.paddingLeft = 5 + 'px';
+      seperator.style.paddingRight = 5 + 'px';
+
+      linkContainer.appendChild(seperator)
+      linkContainer.appendChild(liveLink);
+    }
     //append the new elements to the div once it is has reached the appropriate size. this will
     setTimeout(function(){
       //this prevents the dom elements from loading if the cursor briskly slides across a marker
       if (visible === true){
         activeProj.appendChild(img);
         activeProj.appendChild(p);
-        if (liveLink){
-          activeProj.appendChild(liveLink);
-        }
-        activeProj.appendChild(codeLink);
+        // if (liveLink){
+        //   activeProj.appendChild(liveLink);
+        // }
+        // activeProj.appendChild(codeLink);
+        activeProj.appendChild(linkContainer);
         //add listener to handle the cursor exiting the div, add it here so to avoid glitches
         activeProj.addEventListener("mouseleave", hideProject)
       }
@@ -146,10 +166,11 @@ function showProject(){
       //remove the added dom elements
       img.remove();
       p.remove();
-      if (liveLink){
-        liveLink.remove();
-      }
-      codeLink.remove();
+      linkContainer.remove();
+      // if (liveLink){
+      //   liveLink.remove();
+      // }
+      // codeLink.remove();
 
       //change the styles back to the originals
       styles.width = 50 + 'px';
