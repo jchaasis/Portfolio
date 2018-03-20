@@ -397,9 +397,13 @@ h1 {
 
 #mapbox {
   background-color: white;
-  border-color: rgb(65,105,242)
+  border-color: rgb(65,105,242);
 }
 
+#surge {
+  background-color: rgb(225,239,232);
+  border-color:rgb(84,71,65);
+}
 #techPara {
   margin-top: 0px;
   margin-left: 20px;
@@ -470,7 +474,7 @@ h1 {
 
 #proj2 {
   position: absolute;
-  top:15%;
+  top:40%;
   left: 20%;
 }
 
