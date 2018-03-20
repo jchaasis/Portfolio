@@ -27,7 +27,7 @@ h1 {
   height: 50vh;
   background-image: url("Images/DuneGrass.jpg");
   background-size: cover;
-  background-position:top;
+  background-position: center;
 }
 
 
@@ -191,6 +191,10 @@ h1 {
   background-color: rgb(61,103,141);
   transition-property: color background-color border;
   transition-duration: 500ms;
+}
+
+#resumeDownload:focus{
+  outline: none;
 }
 
 #hobbies {
@@ -394,6 +398,15 @@ h1 {
 #mapbox {
   background-color: white;
   border-color: rgb(65,105,242)
+}
+
+#techPara {
+  margin-top: 0px;
+  margin-left: 20px;
+}
+
+#tacklebox h1 {
+  margin-bottom: 0px;
 }
 
 /*********************************************************/
