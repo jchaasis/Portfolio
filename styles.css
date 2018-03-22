@@ -1,5 +1,20 @@
 /* blue:rgb(61,103,141) */
 
+/******** for desktop monitors *******/
+/* @media screen and (min-width: 1000px) {
+  body {
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+} */
+/**************************************/
+
 body {
   font-family: 'Muli', sans-serif;
   margin: 0px;
@@ -24,8 +39,17 @@ h1 {
   justify-content: flex-end;
   align-items: flex-end;
 
-  height: 50vh;
+  height: 60vh;
+
   background-image: url("Images/DuneGrass.jpg");
+
+  /* Create the parallax scrolling effect */
+   /* background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover; */
+
+
   background-size: cover;
   background-position: center;
 }
@@ -65,6 +89,7 @@ h1 {
   height: 200px;
   background: linear-gradient(rgba(255, 255, 255, 0), rgb(61,103,141));
   width: 100%;
+
 }
 
 #headerLogo {
@@ -228,6 +253,11 @@ h1 {
   margin:20px;
 }
 
+#favoritesList a {
+  text-decoration: none;
+  color: black;
+}
+
 #favoritesList b {
   color: rgb(61,103,141);
   /* text-decoration: underline double rgb(61,103,141); */
@@ -289,16 +319,21 @@ h1 {
 }
 
 #luresShelf {
-  /* width: 90%; */
-  /* display: flex; */
+
+  /* margin-left: auto;
+  margin-right: auto; */
+  /* display: flex;
   justify-content: center;
+  align-self: center; */
 
   /* height: 500px; */
 }
 
 #luresList{
-
-  /* padding-left: 0px; */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0px;
+  /* width: 90%; */
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -510,3 +545,20 @@ footer {
 footer p {
   margin: 4px;
 }
+
+/************for desktops  ******************/
+
+/******** for desktop monitors *******/
+@media screen and (min-width: 1500px) {
+  body {
+    width: 1500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+}
+/**************************************/

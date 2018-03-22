@@ -79,7 +79,8 @@ function showProject(){
     styles.transitionDuration = 500 + 'ms';
 
     styles.backgroundColor = 'rgb(156, 195, 156)';
-    styles.width = 80 + '%';
+    // styles.backgroundColor = 'white';
+    styles.width = 60 + '%';
     styles.height = 85 + '%';
     //border
     styles.borderRadius = 100 + 'px'
@@ -96,9 +97,9 @@ function showProject(){
     let img = document.createElement('img');
     img.src = projects[index].image;
     //gabble needs to be sized differently because it is a slim and tall screenshot.
-    projects[index].title === 'Gabble' ? img.style.width = 250 + 'px' : img.style.width = 70 + '%';
+    projects[index].title === 'Gabble' ? img.style.width = 250 + 'px' : 
+    img.style.width = 90 + '%';
 
-    img.style.borderRadius = 20 + 'px';
 
     //create a p element
     let p = document.createElement('p');
@@ -115,7 +116,6 @@ function showProject(){
     linkContainer.style.borderRadius = 20 + 'px';
     linkContainer.style.display = 'flex';
     linkContainer.style.padding = 10 + 'px';
-
 
     let liveLink;
     //Don't create a link to the live website if it isnt deployed
