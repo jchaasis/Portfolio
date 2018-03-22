@@ -78,15 +78,15 @@ function showProject(){
     styles.transitionProperty = 'all';
     styles.transitionDuration = 500 + 'ms';
 
-    styles.backgroundColor = 'rgb(156, 195, 156)';
-    // styles.backgroundColor = 'white';
-    styles.width = 60 + '%';
-    styles.height = 85 + '%';
+    // styles.backgroundColor = 'rgb(156, 195, 156)';
+    styles.backgroundColor = 'white';
+    styles.width = 100 + '%';
+    styles.height = 80 + '%';
     //border
-    styles.borderRadius = 100 + 'px'
+    styles.borderRadius = 0 + 'px'
     styles.boxShadow = '3px 3px 4px 3px rgba(0, 0, 0, 0.44)'
     //position
-    styles.left = 10 + '%';
+    styles.left = 0 + '%';
     styles.top = 10 + '%';
     //z index needs to change so that the div doesn't stutter and get stuck in a state of constantly changing.
     styles.zIndex = 20;
@@ -97,15 +97,22 @@ function showProject(){
     let img = document.createElement('img');
     img.src = projects[index].image;
     //gabble needs to be sized differently because it is a slim and tall screenshot.
-    projects[index].title === 'Gabble' ? img.style.width = 250 + 'px' : 
-    img.style.width = 90 + '%';
+    projects[index].title === 'Gabble' ? img.style.width = 230 + 'px' :
+    img.style.width = 50 + '%';
 
+    // horizontal rule
+    let hr = document.createElement('hr');
+    hr.style.color = 'black';
+    hr.style.width = 80 + '%';
+    hr.style.marginBottom = 0 + 'px';
 
     //create a p element
     let p = document.createElement('p');
     p.innerHTML = projects[index].description;
       //p styles
     p.style.width = 60 + '%';
+    p.style.fontSize = 1.3 + 'em';
+    p.style.fontWeight = 100;
     p.style.backgroundColor = 'white';
     p.style.padding = 20 + 'px';
     p.style.borderRadius = 20 + 'px';
@@ -115,7 +122,9 @@ function showProject(){
     linkContainer.style.backgroundColor = 'white';
     linkContainer.style.borderRadius = 20 + 'px';
     linkContainer.style.display = 'flex';
+    linkContainer.style.alignItems = 'center'
     linkContainer.style.padding = 10 + 'px';
+    linkContainer.marginBottom = 10 + 'px';
 
     let liveLink;
     //Don't create a link to the live website if it isnt deployed
@@ -135,12 +144,19 @@ function showProject(){
 
     // append the links to the link link navContainer
     linkContainer.appendChild(codeLink);
+
     if (liveLink){
-      let seperator = document.createElement('p')
-      seperator.innerHTML = '||'
-      seperator.style.margin = 0 + 'px';
-      seperator.style.paddingLeft = 5 + 'px';
-      seperator.style.paddingRight = 5 + 'px';
+      let seperator = document.createElement('div');
+      seperator.style.width = 3 + 'px';
+      seperator.style.height = 40 + 'px'
+      seperator.style.borderLeft = "1px solid black";
+      seperator.style.borderRight = "1px solid black";
+      // let seperator = document.createElement('p')
+      // seperator.innerHTML = '||'
+      // seperator.style.margin = 0 + 'px';
+      seperator.style.marginLeft = 5 + 'px';
+      seperator.style.marginRight = 5 + 'px';
+
 
       linkContainer.appendChild(seperator)
       linkContainer.appendChild(liveLink);
@@ -150,6 +166,7 @@ function showProject(){
       //this prevents the dom elements from loading if the cursor briskly slides across a marker
       if (visible === true){
         activeProj.appendChild(img);
+        activeProj.appendChild(hr);
         activeProj.appendChild(p);
         // if (liveLink){
         //   activeProj.appendChild(liveLink);
@@ -165,12 +182,9 @@ function showProject(){
     function hideProject() {
       //remove the added dom elements
       img.remove();
+      hr.remove();
       p.remove();
       linkContainer.remove();
-      // if (liveLink){
-      //   liveLink.remove();
-      // }
-      // codeLink.remove();
 
       //change the styles back to the originals
       styles.width = 50 + 'px';

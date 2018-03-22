@@ -1,30 +1,22 @@
-/* blue:rgb(61,103,141) */
-
-/******** for desktop monitors *******/
-/* @media screen and (min-width: 1000px) {
-  body {
-    width: 1000px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
-    margin-left: auto;
-    margin-right: auto;
-
-  }
-} */
-/**************************************/
+/*
+blue:rgb(61,103,141)
+green: rgb(156, 195, 156)
+*/
+/*
+font-family: 'Catamaran', sans-serif;
+font-family: 'Raleway', sans-serif;
+*/
 
 body {
-  font-family: 'Muli', sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin: 0px;
 }
 
 h1 {
   margin-top: 0px;
   margin-right: 0px;
-  text-decoration: underline;
-  width: inherit;
+  /* text-decoration: underline; */
+  /* width: inherit; */
   /* margin: 10px; */
   padding: 5px;
 }
@@ -38,17 +30,13 @@ h1 {
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
-
   height: 60vh;
-
   background-image: url("Images/DuneGrass.jpg");
-
   /* Create the parallax scrolling effect */
    /* background-attachment: fixed;
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover; */
-
 
   background-size: cover;
   background-position: center;
@@ -140,28 +128,34 @@ h1 {
 /********************************************************/
 
 #about {
+  color: white;
   display: flex;
   /* flex-wrap:wrap; */
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
-
   /* height: 100vh; */
   /* margin-left: 5%; */
-  font-size: 1.2em;
   background-color: rgb(61,103,141);
 }
 
 #aboutPara {
   display: flex;
   /* width: 90%; */
-  background-color: white;
+  /* background-color: white; */
   /* width: 60%; */
   padding: 20px;
   /* padding-top: 20px;
   padding-bottom: 20px; */
-  font-size: 1.2em;
+  font-size: 1.6em;
   border-radius:20px;
+}
+
+#horizontal {
+  margin-bottom: 5px;
+  background-color: white;
+  height: 2px;
+  width: 90%;
 }
 
 #summary {
@@ -172,7 +166,13 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  font-size: 1.2em;
   /* flex-direction: row; */
+}
+
+#vertical {
+  width: 2px;
+  background-color: white;
 }
 
 #sideLists ul {
@@ -180,7 +180,7 @@ h1 {
 }
 
 #sideLists p {
-  color: black;
+  /* color: black; */
 }
 
 #sideLists h2 {
@@ -192,7 +192,7 @@ h1 {
 }
 
 #resume {
-  background-color: white;
+  /* background-color: white; */
   width: 40%;
   display: flex;
   flex-direction: column;
@@ -223,7 +223,7 @@ h1 {
 }
 
 #hobbies {
-  background-color: white;
+  /* background-color: white; */
   width: 40%;
   /* height: auto; */
   display: flex;
@@ -242,11 +242,12 @@ h1 {
 
 #favoritesList {
   border-radius: 20px;
-  background-color: white;
+  /* background-color: white; */
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  font-size: 1.2em;
 }
 
 #favoritesList li {
@@ -255,25 +256,20 @@ h1 {
 
 #favoritesList a {
   text-decoration: none;
-  color: black;
+  color: white;
+  transition-property: all;
+  transition-duration: 500ms;
+}
+
+#favoritesList a:hover {
+  color: rgb(241,116,85);
+  font-weight: 800;
 }
 
 #favoritesList b {
-  color: rgb(61,103,141);
-  /* text-decoration: underline double rgb(61,103,141); */
-}
-
-#recipe {
-  text-decoration: none;
-  color: black;
-}
-
-#recipe:active {
-  color: red;
-}
-
-#recipe:visited {
-  color: black;
+  /* color: rgb(61,103,141); */
+   /* color: rgb(241,116,85); */
+   color: rgb(156, 195, 156);
 }
 
 #contactsContainer {
@@ -285,7 +281,7 @@ h1 {
 }
 
 #contactsContainer ul {
-  padding: 10px;
+  padding: 5px;
 }
 
 .contactPic {
@@ -335,6 +331,7 @@ h1 {
   padding-left: 0px;
   /* width: 90%; */
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   list-style: none;
 }
@@ -484,7 +481,18 @@ h1 {
 }
 
 .project a {
-  color: green;
+  color: rgb(61,103,141);
+  font-size: 1.5em;
+  text-decoration: none;
+  transition-property: all;
+  transition-duration: 500ms;
+  padding: 5px;
+}
+
+.project a:hover {
+  color: red;
+  font-weight: bold;
+  font-size: 1.7em;
 }
 /*********************************************************/
             /* help with the pulse came from https://codepen.io/olam/pen/zcqea */
@@ -549,7 +557,7 @@ footer p {
 /************for desktops  ******************/
 
 /******** for desktop monitors *******/
-@media screen and (min-width: 1500px) {
+/* @media screen and (min-width: 1500px) {
   body {
     width: 1500px;
     display: flex;
@@ -560,5 +568,5 @@ footer p {
     margin-right: auto;
 
   }
-}
+} */
 /**************************************/
