@@ -38,6 +38,33 @@ projectsContainer.addEventListener("mouseleave", clearCoords);
 
 // *****the projects array has been created and stored in the data.js file*****
 
+
+//If the viewing device is a touch screen, we need to have a different event handler than if the device is a laptop/pc. Help for this portion came from multiple places, but ultimale
+console.log(navigator.userAgent)
+
+let mobile;
+//determine if the device is a mobile or not
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+  mobile = true;
+ } else {
+  mobile = false;
+ }
+
+console.log(mobile)
+//variables that will be used in the event handler
+let enter;
+let exit;
+
+if (mobile === true){
+  enter = "touchstart";
+  exit = "touchend";
+} else {
+  enter = "mouseenter";
+  exit = "mouseleave";
+}
+
+console.log( enter, exit)
+
 //use to keep track of open projects so that only one can be open at a time.
 let visible = false;
 
@@ -174,7 +201,7 @@ function showProject(){
         // activeProj.appendChild(codeLink);
         activeProj.appendChild(linkContainer);
         //add listener to handle the cursor exiting the div, add it here so to avoid glitches
-        activeProj.addEventListener("mouseleave", hideProject)
+        activeProj.addEventListener(exit, hideProject)
       }
     }, 500)
 
@@ -212,13 +239,13 @@ function showProject(){
 //add event listeners to the project markers
   //proj1
 let proj1 = document.getElementById("proj1")
-proj1.addEventListener("mouseenter", showProject)
+proj1.addEventListener(enter, showProject)
   //proj2
 let proj2 = document.getElementById("proj2");
-proj2.addEventListener("mouseenter", showProject)
+proj2.addEventListener(enter, showProject)
   //proj3
 let proj3 = document.getElementById("proj3")
-proj3.addEventListener("mouseenter", showProject)
+proj3.addEventListener(enter, showProject)
   //proj4
 let proj4 = document.getElementById("proj4")
-proj4.addEventListener("mouseenter", showProject)
+proj4.addEventListener(enter, showProject)

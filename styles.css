@@ -19,6 +19,8 @@ h1 {
   /* width: inherit; */
   /* margin: 10px; */
   padding: 5px;
+  color: rgb(61,103,141);
+  background-color: rgb(156, 195, 156);
 }
 
 /*********************************************************/
@@ -267,9 +269,7 @@ h1 {
 }
 
 #favoritesList b {
-  /* color: rgb(61,103,141); */
-   /* color: rgb(241,116,85); */
-   color: rgb(156, 195, 156);
+  color: rgb(156, 195, 156);
 }
 
 #contactsContainer {
@@ -341,9 +341,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background-color: rgb(45, 74, 43); */
-  /* background: repeating-linear-gradient(rgb(17, 33, 15), rgb(45, 74, 43)); */
-   background: repeating-linear-gradient(90deg,rgb(17, 33, 15) , rgb(45, 74, 43) 2%);
+  background: repeating-linear-gradient(90deg,rgb(17, 33, 15) , rgb(45, 74, 43) 2%);
   border: medium solid black;
   width: 175px;
   height: 350px;
@@ -460,10 +458,14 @@ h1 {
   flex-wrap: wrap;
   justify-content: space-around; */
   padding: 0%;
-
   height: 100vh;
   background-image: url("Images/Charleston-Harbor-and-Approaches.jpg");
   background-position:center;
+}
+
+#projects h1 {
+  color: rgb(61,103,141);
+  background-color: rgb(156, 195, 156);
 }
 
 .project {
@@ -472,7 +474,6 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* margin: 10px; */
   width: 50px;
   height: 50px;
   background-color: red;
@@ -523,14 +524,12 @@ h1 {
 
 #proj3 {
   position: absolute;
-
   top: 20%;
   left: 77%;
 }
 
 #proj4 {
   position: absolute;
-
   top: 35%;
   left: 60%;
 }
@@ -557,7 +556,7 @@ footer p {
 /************for desktops  ******************/
 
 /******** for desktop monitors *******/
-/* @media screen and (min-width: 1500px) {
+@media screen and (min-width: 1500px) {
   body {
     width: 1500px;
     display: flex;
@@ -568,5 +567,5 @@ footer p {
     margin-right: auto;
 
   }
-} */
+}
 /**************************************/
