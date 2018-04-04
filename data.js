@@ -8,7 +8,7 @@
       "github": "https://github.com/jchaasis/boat-yard", "live": "https://boat-yard.surge.sh"
     }, {"image": "Images/mockup/vamp_macbookgrey_front.png",
       "title": "Vamp",
-      "description": "Vamp's sole purpose is to cure your boredom! Find and share events going around you with this easy to us map based event finder application.",
+      "description": "Vamp's sole purpose is to cure your boredom! Find and share events going around you with this easy to use map based event finder application.",
       "completionDate": '8/5/2017',
       "github": "https://github.com/jchaasis/Vamp", "live": "https://vamp.surge.sh"
     },{"image": "Images/mockup/gabble_iphone6_spacegrey_portrait.png",

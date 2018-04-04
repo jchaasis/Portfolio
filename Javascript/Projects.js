@@ -100,12 +100,10 @@ function showProject(){
     //change the styles
     let styles = activeProj.style;
 
-    // styles.position = 'relative';
     //add transition
     styles.transitionProperty = 'all';
     styles.transitionDuration = 500 + 'ms';
 
-    // styles.backgroundColor = 'rgb(156, 195, 156)';
     styles.backgroundColor = 'white';
     styles.width = 100 + '%';
     styles.height = 80 + '%';
@@ -178,16 +176,14 @@ function showProject(){
       seperator.style.height = 40 + 'px'
       seperator.style.borderLeft = "1px solid black";
       seperator.style.borderRight = "1px solid black";
-      // let seperator = document.createElement('p')
-      // seperator.innerHTML = '||'
-      // seperator.style.margin = 0 + 'px';
+
       seperator.style.marginLeft = 5 + 'px';
       seperator.style.marginRight = 5 + 'px';
-
-
+      //attach the seperator and live link
       linkContainer.appendChild(seperator)
       linkContainer.appendChild(liveLink);
     }
+
     //append the new elements to the div once it is has reached the appropriate size. this will
     setTimeout(function(){
       //this prevents the dom elements from loading if the cursor briskly slides across a marker
@@ -195,10 +191,6 @@ function showProject(){
         activeProj.appendChild(img);
         activeProj.appendChild(hr);
         activeProj.appendChild(p);
-        // if (liveLink){
-        //   activeProj.appendChild(liveLink);
-        // }
-        // activeProj.appendChild(codeLink);
         activeProj.appendChild(linkContainer);
         //add listener to handle the cursor exiting the div, add it here so to avoid glitches
         activeProj.addEventListener(exit, hideProject)
@@ -225,9 +217,7 @@ function showProject(){
       //bring back the projects that were hidden once the project that was viewed returns to original size.
       setTimeout(function(){
         for (let i = 0; i<allProjects.length; i++){
-          // allProjects[i].style.visibility = 'visible';
             allProjects[i].style.display = 'flex';
-            // allProjects[i].style.opacity = 1;
         }
       }, 250)
       //allow the user to view another project

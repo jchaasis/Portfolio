@@ -1,5 +1,7 @@
 /*
-blue:rgb(61,103,141)
+dark blue:rgb(61,103,141)
+medium blue: rgb(95, 132, 166
+light blue: rgb(147, 177, 203)
 green: rgb(156, 195, 156)
 */
 /*
@@ -15,12 +17,9 @@ body {
 h1 {
   margin-top: 0px;
   margin-right: 0px;
-  /* text-decoration: underline; */
-  /* width: inherit; */
-  /* margin: 10px; */
   padding: 5px;
   color: rgb(61,103,141);
-  background-color: rgb(156, 195, 156);
+  background-color: rgb(147, 177, 203);
 }
 
 /*********************************************************/
@@ -39,7 +38,6 @@ h1 {
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover; */
-
   background-size: cover;
   background-position: center;
 }
@@ -132,29 +130,21 @@ h1 {
 #about {
   color: white;
   display: flex;
-  /* flex-wrap:wrap; */
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
-  /* height: 100vh; */
-  /* margin-left: 5%; */
   background-color: rgb(61,103,141);
 }
 
 #aboutPara {
   display: flex;
-  /* width: 90%; */
-  /* background-color: white; */
-  /* width: 60%; */
   padding: 20px;
-  /* padding-top: 20px;
-  padding-bottom: 20px; */
   font-size: 1.6em;
   border-radius:20px;
 }
 
-#horizontal {
+.horizontal {
   margin-bottom: 5px;
+  margin-top: 5px;
   background-color: white;
   height: 2px;
   width: 90%;
@@ -169,20 +159,11 @@ h1 {
   flex-wrap: wrap;
   justify-content: space-around;
   font-size: 1.2em;
-  /* flex-direction: row; */
 }
 
 #vertical {
   width: 2px;
   background-color: white;
-}
-
-#sideLists ul {
-  /* color: rgb(61,103,141); */
-}
-
-#sideLists p {
-  /* color: black; */
 }
 
 #sideLists h2 {
@@ -194,18 +175,15 @@ h1 {
 }
 
 #resume {
-  /* background-color: white; */
   width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 2px solid black; */
   border-radius: 20px;
 }
 
 #resumeDownload {
   color: rgb(61,103,141);
-  /* background-color: rgb(156, 195, 156); */
   border: 3px solid rgb(61,103,141);
   border-radius: 5px;
   padding: 20px;
@@ -225,26 +203,20 @@ h1 {
 }
 
 #hobbies {
-  /* background-color: white; */
   width: 40%;
-  /* height: auto; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 2px solid black; */
   border-radius: 20px;
 }
 
 #favoritesContainer{
   width: 90%;
   border-radius: 20px;
-  /* width: 100%; */
-  /* display: flex; */
 }
 
 #favoritesList {
   border-radius: 20px;
-  /* background-color: white; */
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -304,32 +276,19 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* margin-bottom: none; */
+  background-color: rgb(147, 177, 203);
 
-  /* width: 100%; */
-  /* height: 100vh; */
-
-  /* background-color: rgb(148, 145, 148); */
-  background-color: rgb(231, 209, 180);
   /* overflow: scroll; */
 }
 
 #luresShelf {
 
-  /* margin-left: auto;
-  margin-right: auto; */
-  /* display: flex;
-  justify-content: center;
-  align-self: center; */
-
-  /* height: 500px; */
 }
 
 #luresList{
   margin-left: auto;
   margin-right: auto;
   padding-left: 0px;
-  /* width: 90%; */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -345,6 +304,13 @@ h1 {
   border: medium solid black;
   width: 175px;
   height: 350px;
+}
+
+.lureContainer p {
+  border-radius: 20px;
+  background-color: rgba(61,103,141, .8);
+  padding: 6px;
+  color: white;
 }
 
 .lure {
@@ -446,26 +412,18 @@ h1 {
 /*********************************************************/
   /* Projects */
 /********************************************************/
+
 #coordsContainer {
   position: fixed;
   z-index: 5;
 }
 
-
 #projects {
   position: relative;
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around; */
   padding: 0%;
   height: 100vh;
   background-image: url("Images/Charleston-Harbor-and-Approaches.jpg");
   background-position:center;
-}
-
-#projects h1 {
-  color: rgb(61,103,141);
-  background-color: rgb(156, 195, 156);
 }
 
 .project {
@@ -493,7 +451,6 @@ h1 {
 .project a:hover {
   color: red;
   font-weight: bold;
-  font-size: 1.7em;
 }
 /*********************************************************/
             /* help with the pulse came from https://codepen.io/olam/pen/zcqea */
@@ -540,7 +497,7 @@ h1 {
 
 footer {
   padding: 20px;
-  background-color: rgb(61,103,141);
+  background-color: rgb(95, 132, 166);
   text-align: center;
 }
 
@@ -549,16 +506,23 @@ footer {
   width: 100px;
 }
 
-footer p {
-  margin: 4px;
+#copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background-color: rgb(61,103,141);
+  color: white;
 }
 
-/************for desktops  ******************/
+#copyright p {
+  margin: 0px;
+}
 
 /******** for desktop monitors *******/
 @media screen and (min-width: 1500px) {
   body {
-    width: 1500px;
+    width: 1400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
