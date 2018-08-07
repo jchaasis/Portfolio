@@ -400,6 +400,16 @@ h1 {
   background-color: rgb(225,239,232);
   border-color:rgb(84,71,65);
 }
+
+#heroku {
+  background-color: white;
+  border-color: rgb(152,127,189);
+}
+
+.socketIo {
+  background-color: white;
+  border-color: black;
+}
 #techPara {
   margin-top: 0px;
   margin-left: 20px;
