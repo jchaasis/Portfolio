@@ -436,6 +436,18 @@ h1 {
   background-position:center;
 }
 
+.headerContainer {
+  background-color: rgb(147, 177, 203);
+}
+#projectHead {
+  margin-bottom: 0px;
+}
+
+.headerContainer p {
+  margin-top: 0px;
+  margin-left: 20px;
+}
+
 .project {
   margin: none;
   display: flex;

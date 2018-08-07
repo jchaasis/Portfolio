@@ -38,7 +38,6 @@ projectsContainer.addEventListener("mouseleave", clearCoords);
 
 // *****the projects array has been created and stored in the data.js file*****
 
-
 //If the viewing device is a touch screen, we need to have a different event handler than if the device is a laptop/pc. Help for this portion came from multiple places, but ultimale
 console.log(navigator.userAgent)
 
