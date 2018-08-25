@@ -65,7 +65,7 @@ let visible = false;
 
 let allProjects = document.getElementsByClassName('project');
 
-function showProject(){
+function showProject(event){
   //shortened for use below
   let id = event.target.id;
 
