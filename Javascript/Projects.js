@@ -39,7 +39,6 @@ projectsContainer.addEventListener("mouseleave", clearCoords);
 // *****the projects array has been created and stored in the data.js file*****
 
 //If the viewing device is a touch screen, we need to have a different event handler than if the device is a laptop/pc. Help for this portion came from multiple places, but ultimale
-console.log(navigator.userAgent)
 
 let mobile;
 //determine if the device is a mobile or not
@@ -49,7 +48,6 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
   mobile = false;
  }
 
-console.log(mobile)
 //variables that will be used in the event handler
 let enter;
 let exit;
@@ -61,8 +59,6 @@ if (mobile === true){
   enter = "mouseenter";
   exit = "mouseleave";
 }
-
-console.log( enter, exit)
 
 //use to keep track of open projects so that only one can be open at a time.
 let visible = false;
@@ -89,6 +85,7 @@ function showProject(){
   let top = style.top;
   let left = style.left;
 
+  //TODO: create the different classes in the css file and toggle the classlist when the user hovers over 
   if (visible === false){
     //set visible to true so that the actions do not continue to repeat.
     visible = true;
